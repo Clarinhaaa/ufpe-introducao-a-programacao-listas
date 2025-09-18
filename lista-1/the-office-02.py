@@ -1,0 +1,3 @@
+num1, operador, num2 = int(input()), input(), int(input())
+resultado = (num1 + num2) if operador == "+" else (num1 - num2) if operador == "-" else (num1 * num2) if operador == "*" else (num1 // num2) if operador == "/" and num2 != 0 else "invalido"
+print("Alerta! Alguém tentou usar um operador que não existe. Só um idiota faria isso. Provavelmente o Jim. Isso é claramente uma tentativa de sabotagem corporativa.") if resultado == "invalido" else print(resultado)
