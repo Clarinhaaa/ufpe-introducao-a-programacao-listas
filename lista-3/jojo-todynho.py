@@ -9,11 +9,11 @@ for i in range(4, qtdNovasFrases + 4):
 
 # cria uma lista nova sem repetição de termos
 grimorioSemRepetir = []
-for item in grimorio:
-    if item not in grimorioSemRepetir:
-        grimorioSemRepetir.append(item)
+for frase in grimorio:
+    if frase not in grimorioSemRepetir:
+        grimorioSemRepetir.append(frase)
 
-for item in grimorioSemRepetir:
-    print(f'"{item}": {grimorio.count(item)}')
+for frase in grimorioSemRepetir:
+    print(f'"{frase}": {grimorio.count(frase)}')
 
 print(sorted(grimorio))
