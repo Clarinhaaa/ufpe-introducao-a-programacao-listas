@@ -22,12 +22,12 @@ for i in range(qtdConvidados):
         # verifica se o alimento cadastrado é igual a outro já existente
         if listaAux.count(alimento) > 0: print(f"Na Festa do Calabreso não pode comida Repetida SAI FORA {nomeConvidado}")
         else:
-            listaAux.clear()
+            listaAux = []
             listaAux.append(nomeConvidado)
             listaAux.append(alimento)
             listaAux.append(precoAlimento)
             matrizConvidados.append(listaAux[:])
-            listaAux.clear()
+            listaAux = []
 
 if len(matrizConvidados) == 0: print("Nenhum convidado marcou presença na festa do calabreso!")
 else:
@@ -54,4 +54,4 @@ else:
     for i in range(len(matrizConvidados)):
         print(f"{i + 1}- {matrizConvidados[i][0]}")
 
-    listaAux.clear()
+    listaAux = []
