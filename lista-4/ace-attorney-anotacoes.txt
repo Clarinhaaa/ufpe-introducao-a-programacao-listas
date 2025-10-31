@@ -1,0 +1,33 @@
+ Defesa de João Guilherme, acusado de assassinato de Arthur Sean por uma rixa no campo dos tickets de suporte da monitoria
+
+ Peças de evidência importantes:
+ 1. Perícia Digital: hora da última modificação de um arquivo código-fonte no computador de Arthur. Usada pela promotoria
+ 2. Álibi: testemunha e registro de transação que mostram que João estava na Cafeteria Byte em um horário específico
+ Extra: Lista de impressões digitais na arma do crime, um troféu dado a Arthur pelo caso do Ticket Fantasma
+
+ BIFURACAÇÃO: pressionar o cliente ou não
+ Pressionar: João conta a história do Ticket Fantasma. Relaciona com o arquivo do código-fonte e acusa Elisson como culpado.
+ Não pressionar: Não será feita a conexão entre as duas evidências.
+
+ REGRAS DO VEREDITO
+ 1. Reviravolta do Álibi (se pressionar): verificar se horaModArquivo é posterior à horaMorte. Caso verdadeira, o álibi da cafeteria é utilizado para inocentar João
+ 2. Falta de Provas: se a regra 1 não se aplicar, Phoenix vence o caso se as digitais de João NÃO estiverem na lista
+ 3. Evidência Sólida: caso nada se aplique, João é culpado
+
+-----
+
+ Variáveis:
+
+ str pressionar = ""
+ int horaMorte = 0
+ int horaModArquivo = 0
+
+ int qtdDigitais = 0
+ list listaDigitais = []
+
+ Funções:
+
+ main(): void
+ analisarHorarios(horaMorte, horaModArquivo): boolean
+ verificarElisson(listaDigitais): boolean
+ verificarJoao(listaDigitais): boolean
