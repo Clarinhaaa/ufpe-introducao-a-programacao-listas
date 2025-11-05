@@ -1,0 +1,20 @@
+Fatalis tem 1800 HP
+
+Cada caçador tem 200 HP
+Armas dos caçadores: great_sword, fuzi_arco e glaive_inseto
+Status desprotegido
+
+4 turnos
+
+
+VARIÁVEIS
+vidaFatalis = 1800
+caçadores = [["greatSword", 200, "desprotegido"],
+             ["fuziArco", 200, "desprotegido"],
+             ["glaiveInseto", 200, "desprotegido"]]
+
+FUNÇÕES
+acaoGreatSword()
+acaoFuziArco()
+acaoGaiveInseto()
+acaoFatalis()

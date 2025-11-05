@@ -1,0 +1,31 @@
+Batalha: 4x4 com ataque e elementos únicos
+
+
+X efetivo contra Y: (dano x2)
+Fogo -> Grama
+Água -> Fogo
+Grama e Elétrico -> Água
+
+O oposto é Y fraco contra X (dano x0.5)
+
+Tipo normal é neutro para todos (dano x1)
+
+
+Dano Final = (Poder do Ataque - (Defesa do Defensor / 2)) * Multiplicador de Tipo
+INT mínimo 1
+
+
+O Pokémon Sobrevivente Continua: Se o seu Pokémon vencer uma rodada, ele não será curado e avançará para a próxima com o HP restante.
+Quem Ataca Primeiro: Ataca primeiro no turno o pokemon que possuir maior velocidade, caso a velocidade seja a mesma Elisson ataca primeiro.
+
+
+VARIÁVEIS:
+lorelei = []
+bruno = []
+agatha = []
+lance = []
+
+FUNÇÕES:
+calcularDano()
+passarTurno() ??
+main()
