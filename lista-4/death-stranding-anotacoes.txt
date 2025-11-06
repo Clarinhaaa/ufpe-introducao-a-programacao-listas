@@ -1,0 +1,55 @@
+--- LEGENDA MATRIZ 6x6
+S - Sam
+N - Neil
+P - livre
+I - intransponível
+F - fogo (5 de dano a Sam quando andar nele e estiver em cima no próximo turno)
+
+--- Vidas de Sam e Neil começam com 100 e no piso P
+
+--- AÇÃO NEIL
+Atirar 15 de dano no Sam após 4 ações dele
+
+--- TELETRANSPORTE NEIL
+Após receber 3 ataques, ele se teleporta para a maior distância de Sam (cálculo da distância de Chebyshev)
+É imune a dano de fogo
+
+--- AÇÕES SAM (4)
+Mover-se (WASD - não se move caso andar em direção do piso I ou para fora da matriz)
+Atirar
+Trocar de arma
+
+--- ARMAS SAM
+Espingarda: 25 de dano quando 2 ou menos de distância de Neil
+Rifle: 15 de dano quando 3 de distância. 5 nas demais
+Metralhadora: 15 de dano quando 4 ou mais de distância de Neil
+
+Caso contrário, não dá dano
+
+--- LIKES
+Fórmula: 1000 - (dano_de_neil * 8) - (dano_do_fogo * 10)
+
+--- VARIÁVEIS
+vidaSam = vidaNeil = 100
+matriz = []
+xSam, ySam = coordenada dele na matriz
+xNeil, yNeil = eu acho? Não sei se precisa
+distancia = -1
+
+likes = 0
+danoDeNeil = 0
+danoDeFogo = 0
+
+--- FUNÇÕES
+def distanciaChebyshev(xSam, ySam)
+return xNeil, yNeil
+
+def teleportarNeil()
+return matriz
+
+def tiroSam(arma)
+return vidaNeil
+
+--- LEMBRAR
+Quando Sam ficar com 40 de vida ou menos pela primeira vez, imprimir:
+Dollman: A Fragile comeu todos os criptobiontes da DHV Magalhães... Se curar não é uma opção. Tome cuidado, Sam.
