@@ -1,0 +1,90 @@
+--- INFORMAÇÕES IMPORTANTES
+
+- Explorações em Tartarus (torre com andares)
+- Combates sequenciais com as sombras
+- A cada batalha concluída, sobe 1 andar
+- Makoto recupera 50 hp e 15 mp quando sobe o andar
+- Quando hp de Makoto chegar a 0, a exploração termina
+
+--- SOMBRAS
+
+- Vida inicial, pontos de ataque e golpes próprios
+- Assume diferentes estados:
+Ativo: pronta para atacar
+Derrubado: vulnerável, mas pode se levantar no turno
+Derrotado: eliminada e não pode mais atacar
+
+--- MAKOTO
+
+- Tem diferentes Personas e pode alterná-las quando quiser
+- Ele troca de Persona a cada combate / a cada andar
+- 300 hp max
+- 70 mp max
+
+- 4 tipos de ação
+Persona: golpe da Persona. Usa quando tiver mp o suficiente
+Atacar: golpe da espada
+Yukari: cura 100 hp, pode ser chamada 2 vezes por combate
+Junpei: golpe crítico (100 de dano e derruba a sombra), pode ser chamado 1 vez por combate. Se acerta, concede uma ação extra para Makoto ("Mais Um")
+
+--- TIPOS DE ATAQUES
+
+- Mágico leve -> poder base 3: Zio, Garu, Agi, Bufu
+- Físico leve –> poder base 4: Corte, Perfuração, Pancada
+- Mágico médio –> poder base 5: Zionga, Garula, Agilao, Bufula
+
+--- FÓRMULA DE DANO
+
+dano = int(((poder_base * 15) ** 0.5) * (atk_usuário / 2))
+- atk_usuário: inteiro que representa a força do usuário.
+- poder_base: inteiro que representa o poder base do golpe utilizado.
+
+--- ORDEM DOS TURNOS
+
+Makoto → Sombra1 → Makoto → Sombra2 → Makoto → SombraN → Makoto → Sombra1 → ...
+
+Se houver três sombras — A, B e C — e a Sombra B for derrotada, a ordem passará a alternar apenas entre A e C, repetindo o mesmo princípio caso outra sombra também seja derrotada.
+
+--- TURNO DAS SOMBRAS
+
+- Elas sempre atacam Makoto
+
+--- TURNO DE MAKOTO
+
+- Ataca a primeira sombra disponível que não esteja derrotaba nem derrubada
+- Se Makoto atacar fisicamente, o golpe é sempre certeiro, porém com poder base 2, e não consome mana.
+
+- Se Makoto utilizar seu Persona, três resultados são possíveis:
+1. Acerto normal: o dano é calculado normalmente, de acordo com o golpe.
+2. Erro: o golpe falha e nenhum dano é causado.
+3. Acerto em fraqueza: o golpe causa 50% a mais de dano, derruba a sombra e concede uma ação extra (o efeito “Mais Um”).
+
+- O resultado do ataque Persona é definido pelo bubble sort crescente e decrescente de uma lista fornecida
+Lista ordenada (cres ou decres): fraqueza
+Lista não ordenada: deve verificar quantas trocas de posição ocorreram durante o processo de ordenação. O número considerado será o menor entre as trocas para ordem crescente e ordem decrescente
+Se quantidade de trocas <= 5 acerta, senão erra
+
+--- CONDIÇÕES ESPECIAIS
+
+- Mais um: quando uma sombra é derrubada (Makoto fraqueza / Junpei)
+Quando Makoto atinge a fraqueza de uma sombra, ele ganha um turno extra e pode escolher novamente uma das quatro ações possíveis.
+Como o inimigo atingido ficará derrubado, Makoto procurará outra sombra disponível (que não esteja derrotada nem derrubada) para continuar o ataque.
+
+- Ataque em conjunto:
+Caso todas as sombras, dentre as não derrotadas, sejam derrubadas simultaneamente durante o combate, o confronto é encerrado imediatamente.
+Isso representa o ataque conjunto da equipe, que avança com tudo sobre as sombras vulneráveis, garantindo a vitória instantânea e permitindo que o grupo avance mais um andar.
+
+--- FUNÇÕES
+
+- Obrigatórias:
+main()
+turnoMakoto()
+turnoSombra(listaSombras)
+calcularDano()
+bubbleSort(lista)
+
+--- OBSERVAÇÕES CÓDIGO
+
+- Verificar validez da entrada do ataque de Makoto (yukari, junpei, persona, atacar)
+  Quantidade de mana disponível
+  Quantidade de ações restantes para Yukari (2) e Junpei (1)
