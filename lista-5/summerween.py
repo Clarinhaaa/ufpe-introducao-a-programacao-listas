@@ -39,10 +39,7 @@ def descriptografar(textoCripto, letraChave, idxAtual, letraAtual="(●'◡'●)
         # obtendo o índice da letra chave no alfabeto
         idxLetraChave = alfabeto.index(letraChave)
         
-        #TODO deixar esse resultado em mod 26 (TESTAR A IDEIA)
         idxLetraDecripto = (idxLetraCripto - idxLetraChave) % 26
-
-        #TODO tirar a palavra chave do resultado da lista descriptografada
         # atualizando a mensagem descriptografada
         textoDecripto += alfabeto[idxLetraDecripto]
 
